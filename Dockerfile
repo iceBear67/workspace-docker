@@ -9,7 +9,7 @@ chmod +x /bin/bubble
 apt-get install -y curl jq neovim htop fish tmux sudo git
 useradd -m -s /usr/bin/fish user
 echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user.conf
-mkdir -p /home/user/.config/fish/
+sudo -u user mkdir -p /home/user/.config/fish/
 EOF
 COPY ./init.fish /init.fish
 COPY --chown=user ./user.fish /home/user/.config/fish/config.fish
