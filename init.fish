@@ -11,7 +11,7 @@ if ! cat /etc/passwd | grep -E "^user"
 end
 
 function resume
-    if test $(sudo -u user tmux list-windows | wc -l) -eq 0
+    if test (sudo -u user tmux list-windows | wc -l) -eq 0
         sudo -u user tmux
         return
     end
