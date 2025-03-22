@@ -10,6 +10,10 @@ function exit
     tmux detach
 end
 
+function logout
+    exit
+end
+
 function install-docker
     if test -e /bin/docker
         echo "Docker is already present at /bin/docker."
