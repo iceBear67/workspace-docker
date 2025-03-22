@@ -4,4 +4,7 @@ if test $? == 0; then
   exit
 fi
 
-docker buildx build . --tag workspace:$GIT_REV
+# That will untag :latest, but will leave git rev in place.
+docker rmi workspace:latest
+
+docker buildx build . --tag workspace:$GIT_REV -t workspace:latest
