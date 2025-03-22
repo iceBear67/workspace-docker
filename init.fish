@@ -11,6 +11,10 @@ if ! cat /etc/passwd | grep -E "^user"
 end
 
 function resume
+    if test $(sudo -u user tmux list-windows | wc -l) -eq 0
+        sudo -u user tmux
+        return
+    end
     if sudo -u user tmux has-session -t 0
         if sudo -u user tmux ls | grep -E "^0.*attached)"
             echo "The default tmux session has been attached, dropping you to a normal shell."
