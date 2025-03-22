@@ -1,4 +1,4 @@
-if test -e /workspace/manager.sock
+if test -e /workspace/daemon.sock
     echo "Manager capability is detected. Type 'bubble' for help."
 end
 
