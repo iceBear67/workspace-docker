@@ -1,3 +1,11 @@
+if test -e /workspace/manager.sock
+    echo "Manager capability is detected. Type 'bubble' for help."
+end
+
+if test ! -e /bin/docker
+    echo "Docker is not installed. Type 'install-docker' to install if needed."
+end
+
 function install-docker
     if test -e /bin/docker
         echo "Docker is already present at /bin/docker."

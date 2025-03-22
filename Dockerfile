@@ -5,6 +5,7 @@ FROM debian:11
 COPY --from=0 /bubble/target/client /bin/bubble
 RUN <<EOF
 apt-get update && apt-get upgrade
+chmod +x /bin/bubble
 apt-get install -y curl jq neovim htop fish tmux sudo git
 useradd -m -s /bin/fish user
 echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user.conf
