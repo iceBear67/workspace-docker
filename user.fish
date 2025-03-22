@@ -7,7 +7,11 @@ if test ! -e /usr/bin/docker
 end
 
 function exit
-    tmux detach
+    if test ! -z "$TMUX"
+        tmux detach
+    else
+        builtin exit
+    end
 end
 
 function logout
