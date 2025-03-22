@@ -1,6 +1,6 @@
 if ! cat /etc/passwd | grep -E "^user"
     echo "User was not created correctly. Creating user..."
-    useradd -m -s /bin/fish user
+    useradd -m -s /usr/bin/fish user
     if test ! -e /etc/sudoers.d/user.conf
         echo "Setting sudo permissions"
         mkdir -p /etc/sudoers.d/
@@ -18,12 +18,12 @@ function resume
     if sudo -u user tmux has-session -t 0
         if sudo -u user tmux ls | grep -E "^0.*attached)"
             echo "The default tmux session has been attached, dropping you to a normal shell."
-            cd /home/user && sudo -u user /bin/fish
+            cd /home/user && sudo -u user /usr/bin/fish
         else
             sudo -u user tmux attach -t 0
         end
     else
-        sudo -u user tmux new-session -c /home/user /bin/fish
+        sudo -u user tmux new-session -c /home/user /usr/bin/fish
     end
 end
 

@@ -2,7 +2,7 @@ if test -e /workspace/daemon.sock
     echo "Manager capability is detected. Type 'bubble' for help."
 end
 
-if test ! -e /bin/docker
+if test ! -e /usr/bin/docker
     echo "Docker is not installed. Type 'install-docker' to install if needed."
 end
 
@@ -15,8 +15,8 @@ function logout
 end
 
 function install-docker
-    if test -e /bin/docker
-        echo "Docker is already present at /bin/docker."
+    if test -e /usr/bin/docker
+        echo "Docker is already present at /usr/bin/docker."
         return
     end
     echo "Installing docker in 3s."
