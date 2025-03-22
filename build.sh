@@ -7,4 +7,4 @@ fi
 # That will untag :latest, but will leave git rev in place.
 docker rmi workspace:latest
 
-docker buildx build . --tag workspace:$GIT_REV -t workspace:latest
+docker buildx build . -t workspace:$GIT_REV -t workspace:latest
