@@ -8,6 +8,8 @@ apt-get update && apt-get upgrade
 apt-get install -y curl jq neovim htop fish tmux sudo git
 useradd -m -s /bin/fish user
 echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user.conf
+mkdir -p /home/user/.config/fish/
 EOF
-COPY ./init.fish /home/user/.init.fish
+COPY ./init.fish /init.fish
+COPY --chown=user ./user.fish /home/user/.config/fish/config.fish
 
