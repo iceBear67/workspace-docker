@@ -1,4 +1,4 @@
-if test -e /workspace/daemon.sock
+if test -e $BUBBLE_SOCK
     echo "Manager capability is detected. Type 'bubble' for help."
 end
 
@@ -16,7 +16,7 @@ end
 
 function install-docker
     if test -e /usr/bin/docker
-        echo "Docker is already present at /usr/bin/docker."
+        echo "Docker is already present at /bin/docker."
         return
     end
     echo "Installing docker in 3s."
