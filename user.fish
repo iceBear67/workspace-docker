@@ -7,7 +7,7 @@ if test ! -e /bin/docker
 end
 
 function exit
-    tmux detach && exit
+    tmux detach
 end
 
 function install-docker
