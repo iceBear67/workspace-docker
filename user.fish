@@ -6,6 +6,10 @@ if test ! -e /bin/docker
     echo "Docker is not installed. Type 'install-docker' to install if needed."
 end
 
+function exit
+    tmux detach && exit
+end
+
 function install-docker
     if test -e /bin/docker
         echo "Docker is already present at /bin/docker."
