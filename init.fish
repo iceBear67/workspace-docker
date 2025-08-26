@@ -12,6 +12,7 @@ end
 
 function resume
     if test (sudo -u user tmux list-windows | wc -l) -eq 0
+		cd /home/user
         sudo -u user tmux
         return
     end
@@ -23,7 +24,8 @@ function resume
             sudo -u user tmux attach -t 0
         end
     else
-        sudo -u user tmux new-session -c /home/user /usr/bin/fish
+		cd /home/user
+        sudo -u user tmux new-session -c /usr/bin/fish
     end
 end
 
