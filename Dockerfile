@@ -5,8 +5,8 @@ RUN git clone https://github.com/iceBear67/bubble .
 FROM debian:13
 COPY --from=0 --chmod=0755 /src/bubble.sh /bin/bubble
 RUN <<EOF
-apt update
-apt upgrade
+apt update -y
+apt upgrade -y
 chmod +x /bin/bubble
 apt install -y curl jq neovim htop fish tmux sudo git iproute2 iputils-ping dnsutils openssh-sftp-server build-essential htop tini
 useradd -m -s /usr/bin/fish user
