@@ -8,7 +8,7 @@ RUN <<EOF
 apt update
 apt upgrade
 chmod +x /bin/bubble
-apt install curl jq neovim htop fish tmux sudo git iproute2 iputils-ping dnsutils openssh-sftp-server build-essential htop tini
+apt install -y curl jq neovim htop fish tmux sudo git iproute2 iputils-ping dnsutils openssh-sftp-server build-essential htop tini
 useradd -m -s /usr/bin/fish user
 echo "user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 sudo -u user mkdir -p /home/user/.config/fish/
